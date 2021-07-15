@@ -56,6 +56,7 @@ class FruitCard extends React.Component {
             <button onClick={this.limpiar}>Limpiar</button>
             <hr />
             <div className="card-subtitle">${price}</div>
+            <div className="card-action">Total: ${ price * this.state.cantidad }</div>
             </div>
         </div>
         );
