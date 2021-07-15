@@ -1,3 +1,4 @@
+import React from 'react'
 import "./styles.css";
 
 // Data
@@ -8,29 +9,47 @@ const data = [
   { name: "Melon", price: 5.5 },
 ];
 
-// First functional component
-const CardFruit = (props) => {
-  const fruits = props.fruits;
+/**
+ * @class FruitCard
+ * @extends React.Component
+ * @property {string} name
+ * @property {number} price
+ **/
+class FruitCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cantidad: 0
+    };
+  }
 
-  const listOfFruits = fruits.map((fruit, index) =>
-    <div className="card-fruit" key={index}>
-      <h3>{ fruit.name }</h3>
-      <hr/>
-      <p>{ fruit.price }</p>
-    </div>
-  );
-
-  return (
-    <fragment>
-      {listOfFruits}
-    </fragment>
-  );
-};
+  render() {
+    const { name, price } = this.props;
+    return (
+      <div className="card">
+        <div className="card-content">
+          <div className="card-title">{name}</div>
+          <div className="card-subtitle">{price}</div>
+          <div className="card-action">Cantidad: {this.state.cantidad}</div>
+          <button
+            onClick={() => {
+              this.setState({cantidad: this.state.cantidad + 1})
+            }}>Agregar</button>
+          <hr />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default function App() {
   return (
     <div className="App">
-      <CardFruit fruits={data} />
+      {/* <CardFruit fruits={data} /> */}
+      <FruitCard name="Apple" price={2.5} />
+      <FruitCard name="Orange" price={3.5} />
+      <FruitCard name="Banana" price={1.5} />
+      <FruitCard name="Melon" price={5.5} />
     </div>
   );
 }
