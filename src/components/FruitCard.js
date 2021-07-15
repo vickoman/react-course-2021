@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./FruitCard.module.css"
 
-console.log(styles)
 /**
  * @class FruitCard
  * @extends React.Component
