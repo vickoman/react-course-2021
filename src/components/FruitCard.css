@@ -1,0 +1,20 @@
+.FruitCard {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    max-width: 300px;
+    border-radius: .5em;
+    padding: .5em;
+    background: '#fff';
+    color: black;
+    transition: all 250ms ease-in-out;
+}
+
+.goodCard {
+    background: linear-gradient(to right, #34e89e, #0f3443);
+    color: white;
+}
+
+.badCard {
+    background: linear-gradient(to right, #ed213a, #93291e);
+    color: white;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./FruitCard.css"
 
 /**
  * @class FruitCard
@@ -35,19 +36,9 @@ class FruitCard extends React.Component {
     render() {
         const { name, price } = this.props;
         const hasItem = this.state.cantidad > 0;
-        const styles = {
-            border: "1px solid #ccc",
-            marginBottom: "1em",
-            maxWidth: "300px",
-            borderRadius: ".5em",
-            padding: ".5em",
-            background: hasItem ? "linear-gradient(to right, #34e89e, #0f3443)" :
-            this.state.cantidad < 0 ? "linear-gradient(to right, #ed213a, #93291e)" : '#fff',
-            color: this.state.cantidad === 0 ? "black" : "white",
-            transition: "all 250ms ease-in-out",
-        };
+        const classes = `FruitCard ${hasItem ? 'goodCard' : this.state.cantidad < 0 ? 'badCard' : ''}`
         return (
-        <div className="card" style={styles}>
+        <div className="card" className={classes}>
             <div className="card-content">
             <div className="card-title">{name}</div>
             <div className="card-action">Cantidad: {this.state.cantidad}</div>
