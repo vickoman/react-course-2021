@@ -1,6 +1,7 @@
 import React from "react";
-import "./FruitCard.css"
+import styles from "./FruitCard.module.css"
 
+console.log(styles)
 /**
  * @class FruitCard
  * @extends React.Component
@@ -36,7 +37,7 @@ class FruitCard extends React.Component {
     render() {
         const { name, price } = this.props;
         const hasItem = this.state.cantidad > 0;
-        const classes = `FruitCard ${hasItem ? 'goodCard' : this.state.cantidad < 0 ? 'badCard' : ''}`
+        const classes = `${styles.card} ${hasItem ? styles.good : this.state.cantidad < 0 ? styles.bad : ''}`
         return (
         <div className="card" className={classes}>
             <div className="card-content">

@@ -13,6 +13,7 @@
     "@babel/runtime": "7.13.8",
     "typescript": "4.1.3"
   },
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
