@@ -23,6 +23,10 @@ class FruitCard extends React.Component {
     };
   }
 
+  agregar() {
+    this.setState({cantidad: this.state.cantidad + 1});
+  }
+
   render() {
     const { name, price } = this.props;
     return (
@@ -32,9 +36,7 @@ class FruitCard extends React.Component {
           <div className="card-subtitle">{price}</div>
           <div className="card-action">Cantidad: {this.state.cantidad}</div>
           <button
-            onClick={() => {
-              this.setState({cantidad: this.state.cantidad + 1})
-            }}>Agregar</button>
+            onClick={this.agregar.bind(this)}>Agregar</button>
           <hr />
         </div>
       </div>
