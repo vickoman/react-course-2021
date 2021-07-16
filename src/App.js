@@ -1,5 +1,5 @@
 import React from 'react'
-import FruitCard from './components/FruitCard/'
+import Contador from './components/Contador/'
 import "./styles.css";
 
 // Data
@@ -13,10 +13,11 @@ const data = [
 const App = () => {
   return (
     <div className="App">
-      <FruitCard name="Apple" price={2.5} />
+      {/* <FruitCard name="Apple" price={2.5} />
       <FruitCard name="Orange" price={3.5} />
       <FruitCard name="Banana" price={1.5} />
-      <FruitCard name="Melon" price={5.5} />
+      <FruitCard name="Melon" price={5.5} /> */}
+      <Contador />
     </div>
   );
 }
