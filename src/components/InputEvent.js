@@ -2,27 +2,26 @@ import React, { Component } from 'react';
 
 class InputEvent extends Component {
     state = {
-        inputValue: '',
-        event: ''
+        color: 'blue',
     }
 
-    handleChange = (e) => {
-        this.setState({
-            inputValue: e.target.value,
-            event: e.type
-        });
+    handleChange = (event) => {
+        const color = event.target.value;
+        this.setState(state => ({
+            color
+        }));
     }
     render() {
+        const styles = {
+            color: this.state.color,
+        }
         return (
             <div>
                 <h2>InputEvent</h2>
                 <input type="text" 
                     onChange={this.handleChange}
-                    onCopy={this.handleChange}
-                    onPaste={this.handleChange}
                     ></input>
-                <h1>{this.state.inputValue}</h1>
-                <h3>{this.state.event}</h3>
+                <h1 style={styles}>{this.state.color}</h1>
             </div>
         )
     }
