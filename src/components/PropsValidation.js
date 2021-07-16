@@ -8,6 +8,10 @@ class Profile extends Component {
         age: PropTypes.number
     }
 
+    static defaultProps = {
+        name: 'Victor Diaz'
+    }
+
     render() {
         return (
             <div>
@@ -23,7 +27,6 @@ class PropsValidation extends Component {
         return (
             <div>
                 <Profile 
-                    name="John Doe"
                     bio="I am John Doe"
                     age={33}
                 />
