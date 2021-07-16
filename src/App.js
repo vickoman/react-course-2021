@@ -1,5 +1,6 @@
 import React from 'react'
 import BoxEvent from './components/BoxEvent'
+import InputEvent from './components/InputEvent';
 import "./styles.css";
 
 
@@ -9,6 +10,7 @@ const App = () => {
   return (
     <div className="App">
       <BoxEvent />
+      <InputEvent />
     </div>
   );
 }
