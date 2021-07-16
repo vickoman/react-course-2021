@@ -1,5 +1,5 @@
 import React from 'react'
-import Conditional from './components/Conditional'
+import InjectHtml from './components/InjectHtml'
 import "./styles.css";
 
 
@@ -8,7 +8,7 @@ const anotherProperties = { peleasNocturnas: 300,  fuerza:100 };
 const App = () => {
   return (
     <div className="App">
-      <Conditional />
+      <InjectHtml />
     </div>
   );
 }
