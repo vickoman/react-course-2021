@@ -1,5 +1,5 @@
 import React from 'react'
-import Children from './components/Children'
+import PropsValidation from './components/PropsValidation'
 import "./styles.css";
 
 
@@ -8,7 +8,7 @@ const anotherProperties = { peleasNocturnas: 300,  fuerza:100 };
 const App = () => {
   return (
     <div className="App">
-      <Children />
+      <PropsValidation />
     </div>
   );
 }
