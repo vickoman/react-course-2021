@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropsValidation from './components/PropsValidation'
 import "./styles.css";
 
@@ -17,33 +17,32 @@ const products = [
   }
 ];
 
-const App = () => {
-  return (
-    <div className="App">
-      <h3>Render List</h3>
-      <div>
-        { products.map(product => (
-            <div>
-              $ { product.price } - { product.name }
-              <div>
-                { product.colors.map(color => (
-                    <span
-                      style={{
-                        width: '13px',
-                        height: '13px',
-                        borderRadius: '0.1em',
-                        border: '1px solid gray',
-                        display: 'inline-block',
-                        margin: '0.1em',
-                        background: color
-                      }}></span>
-                  )) }
-              </div>
-            </div>
-          ))}
+class App extends Component {
+  state = {
+    user: {
+      name: "Victor Diaz",
+      country: "Ecuador",
+      twitter: "@vickoman",
+      youtube: "vickoman"
+    }
+  }
+
+  render() {
+    const { user } = this.state;
+    const keys = Object.keys(user);
+    return (
+      <div className="App">
+        <h3>Iterate object properties ✡ </h3>
+        <ul>
+          { keys.map((key) => (
+            <li>
+              <strong>{ key }</strong>: { user[key]}
+            </li>
+          ) ) }
+        </ul>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
